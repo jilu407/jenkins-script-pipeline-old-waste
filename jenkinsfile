@@ -33,11 +33,10 @@ echo "Deploying the Project.........."
 }
 }
 */
-node {
+node ('linux') {
 	stage('Checkout code') {
-        steps {
-            checkout scm
-        }
+         git url: 'https://github.com/jilu407/jenkins-script-pipeline.git'
+           
     }
 	stage('Build'){
 		echo "build pass"
