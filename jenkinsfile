@@ -36,11 +36,18 @@ echo "Deploying the Project.........."
 node {
 	stage('Build'){
 		echo "build pass"
+		sh "mvn -version"
+        sh "mvn clean"
 	}
 	stage('test'){
 		echo 'test pass'
+		sh "mvn test"
 	}
-	stage('deploy'){
-		echo 'deploy pass'
+	stage('Compile'){
+		echo 'Compile pass'
+		sh "mvn compile"
+	}
+	stage('Deploy'){
+		echo "Deploying the Project.........."
 	}
 }
