@@ -57,6 +57,7 @@ node {
 	}
 	stage('Ansible Deploy'){
 		echo "Deploying the Project.........."
+		sh "ansible-playbook play.yml"
 		
 	}
 }
