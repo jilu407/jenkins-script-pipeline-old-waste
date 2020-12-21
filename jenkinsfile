@@ -57,7 +57,7 @@ node {
 	}
 	stage('Ansible Deploy'){
 		echo "Deploying the Project.........."
-		sh "ansible-playbook play.yml"
+		sh "ansible-playbook play.yml  -i 172.31.31.198 -- user ansiadmin --key-file ~/.ssh/id_rsa "
 		
 	}
 }
