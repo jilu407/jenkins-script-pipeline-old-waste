@@ -57,7 +57,7 @@ node {
 	}
 	stage('Ansible Deploy'){
 		echo "Deploying the Project.........."
-		sh "ansible-playbook play.yml  -i /etc/ansible/hosts --user ec2-user --key-file ~/.ssh/id_rsa "
+		ansiblePlaybook credentialsId: 'deploy', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'play.yml', sudoUser: null
 		
 	}
 }
